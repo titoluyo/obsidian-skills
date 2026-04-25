@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-skills",
+  "version": "1.0.1",
+  "description": "Agent Skills for use with Obsidian. Includes deployments for Claude, Gemini, and Antigravity.",
+  "scripts": {
+    "deploy:antigravity": "node scripts/deploy-antigravity.js",
+    "build:gemini": "node scripts/build-gemini.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kepano/obsidian-skills.git"
+  },
+  "author": "Steph Ango",
+  "license": "MIT"
+}

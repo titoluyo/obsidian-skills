@@ -39,6 +39,36 @@ Do not copy only the inner `skills/` folder — clone the full repo so the direc
 
 OpenCode auto-discovers all `SKILL.md` files under `~/.opencode/skills/`. No changes to `opencode.json` or any config file are needed. Skills become available after restarting OpenCode.
 
+## Multi-Agent CLI Support
+
+This repository acts as the single source of truth for Obsidian skills. While originally designed for Claude Code, it features an extensible build system to export these skills to other CLI agents without naming collisions.
+
+### Antigravity Knowledge Items
+
+[Antigravity](https://antigravity.google/) uses Knowledge Items (KIs) stored locally. You can deploy the skills directly to your Antigravity installation using the provided Node.js script.
+
+```sh
+npm run deploy:antigravity
+```
+
+This will parse the `skills/` directory and safely generate compliant `metadata.json` and `artifacts/` directories directly into your `~/.gemini/antigravity/knowledge/` folder.
+
+### Gemini CLI Prompts
+
+Gemini CLI accepts system instructions via markdown files. You can build ready-to-use prompts:
+
+```sh
+npm run build:gemini
+```
+
+This builds prompts into `dist/gemini-prompts/`. You will find:
+- `all-skills.md`: A unified mega-prompt containing all skills and references.
+- Individual `<skill-name>.md` files for targeted use.
+
+### Extensibility
+
+The build system is strictly read-only against the `skills/` directory. Future CLI agents can be supported by adding a custom `build-<agent>.js` script that targets a specific `dist/<agent>-prompts/` output folder, keeping the repository clean and conflict-free when pulling upstream updates.
+
 ## Skills
 
 | Skill | Description |
