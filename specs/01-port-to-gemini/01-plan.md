@@ -20,6 +20,9 @@ Gemini CLI relies on system instructions passed as text files, without a standar
     1.  **Unified Prompt (`obsidian-system-prompt.md`)**: All skills compiled into a single mega-prompt for broad context.
     2.  **Split Prompts (`prompts/<skill>.md`)**: Individual prompt files for targeted context injection.
 
+### 3. Extensible Architecture for Future Agents
+The directory structure and scripting approach are designed to be agent-agnostic. While this project focuses on Gemini and Antigravity, future agents can be supported by adding specific `build-<agent>.js` scripts and outputting to `dist/<agent>-prompts/` without colliding with existing implementations.
+
 ## Implementation Steps
 1.  **Documentation:** Write PRD and Technical Specification (Current Phase).
 2.  **Scripting (Antigravity):** Write `scripts/deploy_to_antigravity.js` or `.py` to handle the KI conversion and deployment to the user's local `~/.gemini/antigravity/knowledge` path.

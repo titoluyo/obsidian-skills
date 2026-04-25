@@ -14,12 +14,14 @@ obsidian-skills/
 ├── skills/                  <-- Source of Truth (SKILL.md, references/)
 ├── scripts/
 │   ├── deploy-antigravity.js
-│   └── build-gemini.js
-└── dist/                    <-- Output for Gemini CLI
+│   ├── build-gemini.js
+│   └── build-<other-agent>.js (Future capability)
+└── dist/                    <-- Output for CLI Agents
     ├── gemini-prompts/
     │   ├── all-skills.md
     │   ├── obsidian-markdown.md
     │   └── ...
+    └── <other-agent>-prompts/ (Future capability)
 ```
 
 ## 3. Data Mapping

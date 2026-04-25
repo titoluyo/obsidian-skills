@@ -30,7 +30,8 @@ This document outlines the step-by-step tasks required to implement the specific
 - [ ] Add npm run scripts to `package.json` for easy execution:
   - `"deploy:antigravity": "node scripts/deploy-antigravity.js"`
   - `"build:gemini": "node scripts/build-gemini.js"`
-- [ ] Update the repository's main `README.md` to explain the new file structures, how to build prompts for Gemini CLI, and how to deploy to local Antigravity.
+- [ ] Ensure all folder structures (like `dist/gemini-prompts/`) and script names are strictly scoped by agent name to avoid collisions when future CLI agents are added.
+- [ ] Modify the repository's main `README.md` to add this new multi-agent capability. Explain what this capability is, how to use the deployment/build scripts for Gemini and Antigravity, and provide other relevant knowledge to the user.
 
 ## Phase 5: Testing
 - [ ] Run `npm run deploy:antigravity` and verify the files appear correctly in `<appDataDir>/knowledge/`.
