@@ -27,13 +27,17 @@ To provide a seamless, command-line driven way to inject Obsidian-specific knowl
 *   **Req 3.2.3:** The script must support outputting individual markdown files per skill for modular context injection.
 *   **Req 3.2.4:** The build artifacts should be saved in a local `dist/` or `out/` folder within the repository.
 
-### 3.3 Maintainability
-*   **Req 3.3.1:** The original `skills/` directory structure and files MUST NOT be modified under any circumstances. This is a strict requirement to allow seamless merging and pulling of upstream updates from the original repository.
-*   **Req 3.3.2:** The scripts should be easily runnable via `npm` or `yarn` (e.g., via `package.json` scripts).
-*   **Req 3.3.3:** The architecture must be extensible to support future AI agents or CLIs. Output directories (e.g., `dist/<agent>-prompts/`) and build scripts (e.g., `scripts/build-<agent>.js`) must use agent-specific naming to avoid collisions.
+### 3.3 Global Agents CLI Deployment
+*   **Req 3.3.1:** A script must exist to deploy the raw skills to the global `~/.agents/skills/` directory.
+*   **Req 3.3.2:** This supports interactive REPL environments (like `gemini-cli` interactive mode) that use the native Agent Skills specification and discover plugins via the `/skills list` command.
 
-### 3.4 Documentation
-*   **Req 3.4.1:** The main `README.md` must be modified to add this new multi-agent capability. It must explain what this capability is, how to use the deployment/build scripts, and include other relevant knowledge to help the user understand the multi-agent design.
+### 3.4 Maintainability
+*   **Req 3.4.1:** The original `skills/` directory structure and files MUST NOT be modified under any circumstances. This is a strict requirement to allow seamless merging and pulling of upstream updates from the original repository.
+*   **Req 3.4.2:** The scripts should be easily runnable via `npm` or `yarn` (e.g., via `package.json` scripts).
+*   **Req 3.4.3:** The architecture must be extensible to support future AI agents or CLIs. Output directories (e.g., `dist/<agent>-prompts/`) and build scripts (e.g., `scripts/build-<agent>.js`) must use agent-specific naming to avoid collisions.
+
+### 3.5 Documentation
+*   **Req 3.5.1:** The main `README.md` must be modified to add this new multi-agent capability. It must explain what this capability is, how to use the deployment/build scripts, and include other relevant knowledge to help the user understand the multi-agent design.
 
 ## 4. Non-Functional Requirements
 *   **Idempotency:** Running the deployment or build scripts multiple times should safely overwrite previous outputs without causing duplication or errors.

@@ -5,8 +5,8 @@ This document captures important design decisions made during the porting proces
 ## 1. Directory Structures vs. Flat Context
 A key difference between AI agents is how they ingest contextual knowledge:
 
-*   **Folder-Based Agents (Claude Code, Antigravity):** These agents are capable of traversing directory trees. They look at a root directory (like `.claude/` or `.gemini/antigravity/knowledge/`) and can dynamically read `references/` subfolders as needed. Therefore, our deployment script for Antigravity (`deploy-antigravity.js`) preserves the exact directory structure of the original skills, including recursive subfolders.
-*   **Prompt-Based Agents (Gemini CLI):** CLIs like Gemini typically accept context via a single payload (e.g., passing a file to `--system-prompt`). They do not natively crawl folder structures during runtime.
+*   **Folder-Based Agents (Claude Code, Antigravity, Gemini Interactive REPL):** These agents are capable of traversing directory trees. They look at a root directory (like `.claude/`, `.gemini/antigravity/knowledge/`, or `~/.agents/skills/` for Gemini interactive REPLs) and can dynamically read `references/` subfolders as needed. Therefore, our deployment scripts (`deploy-antigravity.js` and `deploy-agents.js`) preserve the exact directory structure of the original skills, including recursive subfolders.
+*   **Prompt-Based Agents (Gemini CLI standalone):** CLIs like Gemini running in standalone pipeline modes typically accept context via a single payload (e.g., passing a file to `--system-prompt`). They do not natively crawl folder structures during runtime.
 
 ## 2. Completeness in Gemini Prompts
 Because Gemini CLI doesn't traverse subdirectories, a naive copy would result in the loss of crucial information stored in `references/` (such as `FUNCTIONS_REFERENCE.md` or `EXAMPLES.md`). 

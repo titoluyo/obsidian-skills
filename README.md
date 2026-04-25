@@ -53,6 +53,16 @@ npm run deploy:antigravity
 
 This will parse the `skills/` directory and safely generate compliant `metadata.json` and `artifacts/` directories directly into your `~/.gemini/antigravity/knowledge/` folder.
 
+### Global Agents CLI (Interactive REPLs)
+
+If you are using `gemini-cli` in its interactive REPL mode (or any other agent that reads from the global `~/.agents/skills/` directory), you can deploy the raw skills natively:
+
+```sh
+npm run deploy:agents
+```
+
+This copies the skills cleanly into your user profile's global agents directory so commands like `/skills list` will instantly detect them!
+
 ### Gemini CLI Prompts
 
 Gemini CLI accepts system instructions via markdown files. You can build ready-to-use prompts:

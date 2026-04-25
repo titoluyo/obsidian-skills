@@ -14,6 +14,7 @@ obsidian-skills/
 ├── skills/                  <-- Source of Truth (SKILL.md, references/)
 ├── scripts/
 │   ├── deploy-antigravity.js
+│   ├── deploy-agents.js
 │   ├── build-gemini.js
 │   └── build-<other-agent>.js (Future capability)
 └── dist/                    <-- Output for CLI Agents
@@ -54,6 +55,14 @@ obsidian-skills/
     *   Append the contents of referenced files inline to ensure the LLM has full context without needing to read secondary files, as the CLI might only read the single prompt file.
 2.  **Split Prompts (`<skill-name>.md`):**
     *   Same as above, but scoped to individual skills.
+
+### 3.3 Global Agents Deployment Mapping
+**Source:** `skills/<skill-name>/`
+**Destination:** `<os.homedir()>.agents/skills/<skill-name>/`
+
+**Mapping Logic:**
+1. Execute a pure 1:1 copy of the source directory.
+2. The folder structure remains intact to comply with the native Agent Skills specification used by REPL environments.
 
 ## 4. Implementation Details
 

@@ -17,6 +17,11 @@ This document outlines the step-by-step tasks required to implement the specific
 - [x] Ensure that any subdirectories, like `references/`, are recursively copied into the `artifacts/` folder.
 - [x] Validate that the script is strictly read-only regarding the original `skills/` directory.
 
+## Phase 2.5: Global Agents Deployment Script (`scripts/deploy-agents.js`)
+- [x] Write logic to iterate through the `skills/` directory.
+- [x] Write logic to dynamically resolve the global agents directory (`~/.agents/skills/`).
+- [x] Execute a clean, recursive 1:1 copy of each skill directory directly into the global agents directory to support interactive REPLs like `gemini-cli`.
+
 ## Phase 3: Gemini CLI Build Script (`scripts/build-gemini.js`)
 - [x] Write logic to iterate through the `skills/` directory.
 - [x] Ensure the output directory `dist/gemini-prompts/` exists (and is cleaned before the build).

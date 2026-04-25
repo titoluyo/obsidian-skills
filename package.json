@@ -4,6 +4,7 @@
   "description": "Agent Skills for use with Obsidian. Includes deployments for Claude, Gemini, and Antigravity.",
   "scripts": {
     "deploy:antigravity": "node scripts/deploy-antigravity.js",
+    "deploy:agents": "node scripts/deploy-agents.js",
     "build:gemini": "node scripts/build-gemini.js"
   },
   "repository": {

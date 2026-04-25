@@ -20,7 +20,11 @@ Gemini CLI relies on system instructions passed as text files, without a standar
     1.  **Unified Prompt (`obsidian-system-prompt.md`)**: All skills compiled into a single mega-prompt for broad context.
     2.  **Split Prompts (`prompts/<skill>.md`)**: Individual prompt files for targeted context injection.
 
-### 3. Extensible Architecture for Future Agents
+### 3. Global Agents CLI (Interactive REPLs)
+Agents with interactive REPLs (like `gemini-cli` in interactive mode or Claude Code) rely on a global skills directory adhering to the Agent Skills specification.
+*   **Action:** Create a deployment script (`deploy-agents.js`) that safely copies the raw `skills/` directory directly into the user's `~/.agents/skills/` profile directory so commands like `/skills list` can detect them automatically.
+
+### 4. Extensible Architecture for Future Agents
 The directory structure and scripting approach are designed to be agent-agnostic. While this project focuses on Gemini and Antigravity, future agents can be supported by adding specific `build-<agent>.js` scripts and outputting to `dist/<agent>-prompts/` without colliding with existing implementations.
 
 ## Implementation Steps
